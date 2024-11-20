@@ -1,0 +1,17 @@
+{
+  "name": "demo-001",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@langchain/core": "^0.3.18",
+    "@langchain/ollama": "^0.1.2",
+    "zod": "^3.23.8"
+  }
+}
