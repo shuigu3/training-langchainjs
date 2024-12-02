@@ -38,7 +38,7 @@ export async function callAgent(client, query, thread_id) {
       };
 
       const vectorStore = new MongoDBAtlasVectorSearch(
-        new ChatOllama({ model: "llama3.1" }),
+        new ChatOllama({ model: "llama3-groq-tool-use" }),
         dbConfig
       );
 
@@ -67,7 +67,7 @@ export async function callAgent(client, query, thread_id) {
   const toolNode = new ToolNode(tools);
 
   const model = new ChatOllama({
-    model: "llama3.1",
+    model: "llama3-groq-tool-use",
   }).bindTools(tools);
 
   function shouldContinue(state) {
