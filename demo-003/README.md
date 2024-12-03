@@ -8,6 +8,7 @@ LangChain.js の[How-to guides](https://js.langchain.com/docs/how_to/)を順番�
 ### 想定した結果にならない
 
 おそらく System メッセージを調整することで実現可能かもしれないが構成のな Model にするだけで変わる可能性もあるためココで終了
+gpt-4oに変更すると想定した結果になった。モデルの性能に依存する。
 
 ### Model について
 
