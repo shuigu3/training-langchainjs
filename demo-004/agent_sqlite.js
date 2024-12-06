@@ -11,17 +11,11 @@ import { getCoolestCities, getWeather } from "./tools.js";
 import { HumanMessage } from "@langchain/core/messages";
 import { SqliteSaver } from "@langchain/langgraph-checkpoint-sqlite";
 
-import { PostgresSaver } from "@langchain/langgraph-checkpoint-postgres";
-
 export const callAgent = async (query) => {
   const tools = [getCoolestCities, getWeather];
   const toolNode = new ToolNode(tools);
 
-  // const checkpointer = SqliteSaver.fromConnString(":memory:");
-  const checkpointer = PostgresSaver.fromConnString(
-    process.env.AZURE_POSTGRES_DB_
-  );
-  await checkpointer.setup();
+  const checkpointer = SqliteSaver.fromConnString(":memory:");
 
   const model = new AzureChatOpenAI({
     model: "gpt-4o",
